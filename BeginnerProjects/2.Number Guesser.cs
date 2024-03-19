@@ -7,12 +7,12 @@ int numberOfLives = 5;
 int numberOfGuesses = 0;
 int higherNumber = 0;
 int lowerNumber = 0;
-Console.WriteLine($"Hello and welcome to the guessing game \n Pick your gaming mode:");
+Console.WriteLine($"Hello and welcome to the guessing game \n Pick your game mode:");
 Console.WriteLine($"[1] - Normal Mode\n[2] - Survival Mode");
 
 
 int userPicked = Convert.ToInt32(Console.ReadLine());
-if (userPicked == 1) // Game mode 1
+if (userPicked == 1) // Normal Mode
 {
     while (correctAwnser == true)
     {
@@ -40,7 +40,7 @@ if (userPicked == 1) // Game mode 1
         }
     }
 }
-else //Game mode 2
+else //Survival Mode
 {
     while (correctAwnser == true)
     {
@@ -69,7 +69,7 @@ else //Game mode 2
             Console.WriteLine($"Good job you found it, {randomNr} was the secret number");
             correctAwnser = false;
         }
-        else if (numberOfLives == 0)
+        else if (numberOfLives == 0) 
         {
             Console.WriteLine($"Game over! You ran out of lives.");
             correctAwnser = true;
