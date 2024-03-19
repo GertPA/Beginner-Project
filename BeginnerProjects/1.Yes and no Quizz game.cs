@@ -2,40 +2,38 @@
 
 int score = 0;
 
-Console.WriteLine("Wellcome to this quiz , awnser with yes and no, Do you wish to continue ????");
+Console.WriteLine("Welcome to this quiz! Answer with \"yes\" or \"no\". Do you wish to continue?");
 Console.ReadLine();
 
-Console.WriteLine("Lungs are the largest internal organ in the human body."); //No
+Console.WriteLine("Lungs are the largest internal organ in the human body."); 
 string? firstQuestion = Console.ReadLine();
-string firsQuestionStatus = "no";
+string firsQuestionStatus = "no"; 
 CheckingMethod(firstQuestion, firsQuestionStatus);
 
-Console.WriteLine(" The first song ever sung in the space was “Happy Birthday.”");  //yes
+Console.WriteLine(" The first song ever sung in the space was “Happy Birthday.”");  
 string? secondQuestion = Console.ReadLine();
 string secondQuestionStatus = "yes";
 CheckingMethod(secondQuestion, secondQuestionStatus);
 
-Console.WriteLine("A male canary tends to have a better singing voice than a female canary."); //yes
+Console.WriteLine("A male canary tends to have a better singing voice than a female canary."); 
 string? thirdQuestion = Console.ReadLine();
 string thirdQuestionStatus = "yes";
 CheckingMethod(thirdQuestion, thirdQuestionStatus);
 
-Console.WriteLine("Dolphin is considered to be the fastest species in the ocean."); //no
+Console.WriteLine("Dolphin is considered to be the fastest species in the ocean."); 
 string? forthQuestion = Console.ReadLine();
 string forthQuestionStatus = "no";
 CheckingMethod(forthQuestion, thirdQuestionStatus);
 
-Console.WriteLine("Mice have more bones than humans."); //yes
+Console.WriteLine("Mice have more bones than humans."); 
 string? fifthQuestion = Console.ReadLine();
 string fifthQuestionStatus = "yes";
 CheckingMethod(fifthQuestion, fifthQuestionStatus);
 
-void CheckingMethod(string userInputedWord, string questionStatus)
-
+void CheckingMethod(string userInputedWord, string questionStatus) //will check if the answer is correct or nah 
 {
     if (userInputedWord.ToLower() == questionStatus)
     {
-
         Console.WriteLine("+1 good job");
         score++;
     }
@@ -47,7 +45,7 @@ void CheckingMethod(string userInputedWord, string questionStatus)
 
     else
     {
-        Console.WriteLine("unvalid input , select yes or no ");
+        Console.WriteLine("invalid input , select yes or no ");
     }
 }
 
