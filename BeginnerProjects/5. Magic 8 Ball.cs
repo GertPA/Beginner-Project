@@ -6,7 +6,7 @@ int randomPos = randomNr.Next(0, 11);
 int randomNeg = randomNr.Next(0,6);//randomNr.Next(0,negativeAnswer.Length-1) might wrk too
 
 
-//This looks ugly af,but it works... find a way to fix it 
+//This looks ugly af,but it works... find a way to fix it , maybe putting all of them in a single array and only using only 1 random instance
 string[] positiveAnswer={"It is certain", "It is decidedly so","Without a doubt","Yes definitely","You may rely on it", "As I see it, yes", "Mo st likely","Outlook good","Yes","Signs point to yes" };
 string[] neutralAnswer ={ "Try again","Ask again later"," Better not tell you now"," Cannot predict now" ," Concentrate and ask again"};
 string[] negativeAnswer ={"Don't count on it","My reply is no","My sources say no","Outlook not so good,Very doubtful"};
