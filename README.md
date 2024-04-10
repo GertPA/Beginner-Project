@@ -6,3 +6,6 @@ The projects I've got in here so far include :
 2. Number guessing game from 1 to 100
 3. The Dominion of Kings
 4. Console Baseball Ticket Machine
+5. Magic 8 ball
+6. Inventory?
+7. BMi Calculator
