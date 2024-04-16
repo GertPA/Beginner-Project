@@ -1,0 +1,123 @@
+//Lets Make a Game 
+
+Random random = new Random();
+int PlayerHealth = 50;
+int monsterHealth = 50;
+bool swordIn = false;
+bool replay = true;
+
+Console.WriteLine("Welcome to The Dungeon Game! Are you ready to embark on a thrilling adventure? \n\t\t\t(Press Enter To play)");
+Console.ReadLine();
+
+Console.WriteLine("You awaken to find yourself at a fork in the path, with two diverging routes stretching before you.\nWill you venture left or right? The choice is yours to make.");
+string firstPath = Console.ReadLine();
+
+while (replay)
+{
+	switch (firstPath)
+	{
+		//left path
+		case "left":
+			Console.WriteLine("You descend down the stairs,each step echoing in the dimly lit chamber. \nAs you reach the bottom, your eyes are drawn to a mysterious chest standing before you.Its weathered \nexterior hints at untold treasures within.Will you dare to open it and unveil its secrets?");
+			string openChest = Console.ReadLine();
+			if (openChest.ToLower() == "yes" || openChest.ToLower() == "open")
+			{
+				bool swordIns = true;
+				Console.WriteLine("you found a sword"); //edit this
+
+
+				FightingScene(monsterHealth, PlayerHealth, swordIns);
+			}
+			else
+			{
+				Console.WriteLine("Deciding to press on, you cautiously make your way down the stairs, each step fraught with anticipation.\n Suddenly, without warning, the floor gives way beneath you, and you plummet into a hidden trap.\n As darkness envelops you, you realize your fate has been sealed");
+				// Console.WriteLine("Do you want to replay?"); //might be good idea to add a replay option
+				// string replayUser = Console.ReadLine();
+
+			}
+			break;
+
+
+		//right path
+		case "right":
+			Console.WriteLine("A fearsome monster looms before you, its presence sending shivers down your spine.\n Will you stand your ground and face it in combat, or will you choose the path of caution and attempt to flee?\n The decision is yours to make, but choose wisely, for the outcome may determine your fate.");
+			string userChoice = Console.ReadLine();
+			switch (userChoice.ToLower())
+			{
+				case "fight":
+					FightingScene(monsterHealth, PlayerHealth, swordIn);
+
+					break;
+
+				case "run":
+					Console.WriteLine("You make a quick decision to flee from the monstrous creature, \nyour heart pounding in your chest as you dart down the nearest escape route. \nWith a surge of adrenaline, you manage to outpace the pursuing beast, \nbreathing a sigh of relief as you leave it far behind. \nCongratulations, you've successfully evaded the encounter for now.");
+					//go to the left
+					break;
+
+				default:
+					Console.WriteLine("Invalid choice. Please choose 'left' or 'right'.");
+					break;
+			}
+
+			break;
+
+		default:
+			Console.WriteLine("Invalid input");
+			break;
+
+
+
+	}
+
+	Console.WriteLine("Do you want to replay? (yes/no)");
+	string replayAnswer = Console.ReadLine().ToLower();
+
+	if (replayAnswer == "no")
+	{
+		replay = false;
+		Console.WriteLine("Thanks for playing!");
+	}
+	else if (replayAnswer != "yes")
+	{
+		Console.WriteLine("Invalid input. Exiting game.");
+		replay = false;
+	}
+}
+void FightingScene(int monsterHp, int playerHp, bool sword)
+{
+	Console.WriteLine("you decided to fight the monster");
+
+	switch (sword)
+	{
+		case false:
+
+			while (monsterHp > 0 && playerHp > 0)
+			{
+
+				int hitPoints = random.Next(0, 26);
+				int hitPointz = random.Next(0, 26);
+				monsterHp -= hitPoints;
+				playerHp -= hitPointz;
+
+				Console.WriteLine("You hit the monster with your fist you did " + hitPoints + " points of damage the monster has " + monsterHp + " health points");
+				Console.WriteLine("The monster hit you with their claws you lost " + hitPointz + " points of damage you have " + playerHp + " health points");
+				if (playerHp == 0)
+				{
+					Console.WriteLine("you lost"); //rewrite
+				}
+				else if (monsterHp == 0)
+					Console.WriteLine("you win bro"); //reweite
+			}
+
+			break;
+
+		case true:
+			Console.WriteLine("You hit the monster with your sword , killing it good job"); //rewrite this
+			break;
+		default:
+			Console.WriteLine("invalid input");
+			break;
+	}
+
+}
+
