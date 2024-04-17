@@ -9,3 +9,4 @@ The projects I've got in here so far include :
 5. Magic 8 ball
 6. Inventory?
 7. BMi Calculator
+8.Game
