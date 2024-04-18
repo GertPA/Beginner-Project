@@ -112,7 +112,7 @@ void FightingScene(int monsterHp, int playerHp, bool sword)
 			break;
 
 		case true:
-			Console.WriteLine("You hit the monster with your sword , killing it good job"); //rewrite this
+			Console.WriteLine("With a fierce battle cry, you lunge forward, the weight of your sword cutting\n through the air with deadly precision. The blade meets the monster's hide\n with a resounding clash, sending shivers down your spine as you feel its\n power. Your strike finds its mark, the force behind it driving deep into the\n creature's flesh. With a final, thunderous roar, the monster falls,\n defeated by your valor and skill. A victorious sense of accomplishment\n washes over you as you stand over your fallen foe, the echoes of battle\n fading into the silence of triumph. Well done, brave warrior."); 
 			break;
 		default:
 			Console.WriteLine("invalid input");
