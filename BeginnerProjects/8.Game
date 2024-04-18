@@ -23,7 +23,7 @@ while (replay)
 			if (openChest.ToLower() == "yes" || openChest.ToLower() == "open")
 			{
 				bool swordIns = true;
-				Console.WriteLine("you found a sword"); //edit this
+				Console.WriteLine("In the chest, you discover a brand-new sword, looking as pristine\n as if it were just forged. After a moment's thought, you decide to keep it\n —after all, you never know when it might come in handy."); 
 
 
 				FightingScene(monsterHealth, PlayerHealth, swordIns);
