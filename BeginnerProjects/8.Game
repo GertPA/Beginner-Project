@@ -24,16 +24,33 @@ while (replay)
 			{
 				bool swordIns = true;
 				Console.WriteLine("In the chest, you discover a brand-new sword, looking as pristine\n as if it were just forged. After a moment's thought, you decide to keep it\n —after all, you never know when it might come in handy."); 
+                
+				Console.WriteLine("As you press on, you encounter a dead end. Would you like to turn back?");
+				string? turnBack = Console.ReadLine();
+				switch (turnBack)
+				{
+					case "yes":
+					//rewrite this
+					Console.WriteLine("you decided to turn back to the right path");
+					//add a sentenc if he wishes to fight or not 
+					FightingScene(monsterHealth, PlayerHealth, swordIns);
+					break;
 
+					case "no":
+					//rewrite this
+					Console.WriteLine("The brave is an adventuer if there exist a uneplored path he will check it , you decide to turn back ");
+					//add a sentenc if he wishes to fight or not 
+					FightingScene(monsterHealth, PlayerHealth, swordIns);
+					break;
+				}
 
-				FightingScene(monsterHealth, PlayerHealth, swordIns);
+			
+				
 			}
 			else
 			{
 				Console.WriteLine("Deciding to press on, you cautiously make your way down the stairs, each step fraught with anticipation.\n Suddenly, without warning, the floor gives way beneath you, and you plummet into a hidden trap.\n As darkness envelops you, you realize your fate has been sealed");
-				// Console.WriteLine("Do you want to replay?"); //might be good idea to add a replay option
-				// string replayUser = Console.ReadLine();
-
+				//dunno here 
 			}
 			break;
 
@@ -85,12 +102,13 @@ while (replay)
 }
 void FightingScene(int monsterHp, int playerHp, bool sword)
 {
-	Console.WriteLine("you decided to fight the monster");
+	//this can be removed 
+	Console.WriteLine("You made the bold decision to confront the monster head-on in combat.");
 
 	switch (sword)
 	{
 		case false:
-
+         
 			while (monsterHp > 0 && playerHp > 0)
 			{
 
@@ -120,4 +138,3 @@ void FightingScene(int monsterHp, int playerHp, bool sword)
 	}
 
 }
-
