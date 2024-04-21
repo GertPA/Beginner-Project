@@ -1,4 +1,4 @@
-//Lets Make a Game 
+//Lets Make a Simple Game 
 
 Random random = new Random();
 int PlayerHealth = 5000;
