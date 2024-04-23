@@ -53,7 +53,7 @@ while (replay)
 
 	}
 
-	Console.WriteLine("Do you want to replay? (yes/no)");
+	Console.WriteLine("Do you want to replay? (yes/no)"); //will respawn before the last action
 	string? replayAnswer = Console.ReadLine().ToLower();
 
 	if (replayAnswer == "no")
