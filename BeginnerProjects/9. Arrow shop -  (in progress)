@@ -1,0 +1,116 @@
+using System.Reflection.Metadata.Ecma335;
+using System.Runtime.Serialization;
+using System.Security.Cryptography.X509Certificates;
+
+//this will run it 
+Arrow thisShit = new Arrow();
+Console.WriteLine(thisShit);
+
+
+//arrowheads >  steel - 10 , wood - 3 , obsidian - 5
+// shaft > 60 to 100 cm  | 0.05 per cm (if my calc is correct 60= 3 so userInput * 0.05 double check it) -- can be a tuple or an array with limits ,,, idk figure it out 
+// fleching >  plastic - 10, turkey-5 ,goose-3
+
+
+public enum arrowheads { steel, wood, bsidian }
+public enum fleching { plastic, TurkeyFeathers, GooseFeathers }
+class Arrow
+{
+    public int shaft;
+    bool reask = true;
+    public int userShaftChoice;
+
+
+    public Arrow()
+    {
+        Console.WriteLine("\tHellow and welcome to the shop \n\tpress enter to continue");//rewrite - priority D
+        Console.ReadLine();
+
+        Console.WriteLine("pick your arrow heads : \n1.Steel \n2.Wood \n3.Obsidian"); //can you use enums here ? - ↓ 
+        int userArrowHeadChoice = Convert.ToInt16(Console.ReadLine());
+
+
+
+        while (reask)
+        {
+            Console.WriteLine("pick your shaft size (min= 60 , max = 100)");   //rewrite - priority D
+            int userShaftChoice = Convert.ToInt16(Console.ReadLine());
+            if (userShaftChoice >= 60 && userShaftChoice <= 100)
+            {
+
+                Console.WriteLine($"The shaft will cost {userShaftChoice} coins");  //fix the method priority B
+                reask = false;
+            }
+            else
+            {
+                Console.WriteLine("Pls pick something between 60 and 100"); //rewrite - priority D
+
+            }
+
+        }
+
+
+        Console.WriteLine("pick your arrow heads : \n1.Plastic \n2.Turkey Feathers \n3.Goose Feathers");
+        int userFlechingChoice = Convert.ToInt16(Console.ReadLine());
+    }
+    public float GetCost(float arrowUser, float flechingUser)//calculate total arrow price  | you  can combine the other method too ,,, 
+    {
+        int totalPrice;
+        switch (arrowUser)
+        { //this doest work ... but the logic stends 
+            case 1:
+                int yes = arrowheads.steel + totalPrice;
+                break;
+
+            case 2:
+                int yes = arrowheads.wood + totalPrice;
+                break;
+
+            case 3:
+                int yes = arrowheads.obsidian + totalPrice;
+                break;
+
+            default:
+                Console.WriteLine("invalid input");
+                break;
+        }
+
+        switch (flechingUser)
+        {
+            case 1:
+                int yes = fleching.plastic + totalPrice;
+                break;
+
+            case 2:
+                int yes = fleching.TurkeyFeathers + totalPrice;
+                break;
+
+            case 3:
+                int yes = fleching.GooseFeathers + totalPrice;
+                break;
+
+            default:
+                Console.WriteLine("invalid input");
+                break;
+        }
+
+
+
+    }
+
+    public void ShaftCalculating(int userChoice)
+    {
+        double defaultSize = 60;
+        double cosetDiff = 0.05;
+
+        if (userChoice == null) //does null work here ?? resesarch
+        {
+            double finalCost = defaultSize * cosetDiff; // into and double math .. doest work 
+        }
+        else
+        {
+            double finalCost = userChoice * cosetDiff;
+        }
+    }
+
+}
