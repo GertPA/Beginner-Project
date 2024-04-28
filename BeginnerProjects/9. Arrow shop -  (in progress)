@@ -66,8 +66,22 @@ class Arrow
 
     public void userSwitchChoice(int userinput)
     {
+    switch (userinput)
+        {
+            case 1:
+                { int picked = item1; }
+                break;
 
+            case 2:
+                { int picked = item2; }
+                break;
+
+            case 3:
+                { int picked = item3; }
+                break;
+        }
     }
+    
     // public void GetCost(int arrowUser, int flechingUser)//calculate total arrow price  | you  can combine the other method too ,,, 
     // {
     //     int totalPrice=0;
