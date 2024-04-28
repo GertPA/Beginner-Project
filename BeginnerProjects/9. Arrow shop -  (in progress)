@@ -12,14 +12,14 @@ Console.WriteLine(thisShit);
 // fleching >  plastic - 10, turkey-5 ,goose-3
 
 
-public enum Arrowheads:int
+public enum Arrowheads : int
 {
     steel = 10,
     wood = 3,
     obsidian = 5
 }
 
-public enum Fleching:int
+public enum Fleching : int
 {
     plastic = 10,
     TurkeyFeathers = 5,
@@ -39,6 +39,8 @@ class Arrow
 
         Console.WriteLine("pick your arrow heads : \n1.Steel \n2.Wood \n3.Obsidian"); //can you use enums here ? - ↓ 
         int userArrowHeadChoice = Convert.ToInt16(Console.ReadLine());
+        userSwitchChoice(userArrowHeadChoice, (int)Arrowheads.steel, (int)Arrowheads.wood, (int)Arrowheads.obsidian);
+
 
 
         while (reask)
@@ -48,7 +50,7 @@ class Arrow
             if (userShaftChoice >= 60 && userShaftChoice <= 100)
             {
 
-                 Console.WriteLine($"Total price: {(float)ShaftCalculating(userShaftChoice)}"); 
+                Console.WriteLine($"Total price: {(float)ShaftCalculating(userShaftChoice)}");
                 reask = false;
             }
             else
@@ -62,85 +64,59 @@ class Arrow
 
         Console.WriteLine("pick your arrow heads : \n1.Plastic \n2.Turkey Feathers \n3.Goose Feathers");
         int userFlechingChoice = Convert.ToInt16(Console.ReadLine());
+        userSwitchChoice(userFlechingChoice, (int)Fleching.plastic, (int)Fleching.TurkeyFeathers, (int)Fleching.GooseFeathers);
+
+
+        //Convert It to a method
+        int arrowTotal = userSwitchChoice(userArrowHeadChoice, (int)Arrowheads.steel, (int)Arrowheads.wood, (int)Arrowheads.obsidian);         
+         int flechingTotal = userSwitchChoice(userFlechingChoice, (int)Fleching.plastic, (int)Fleching.TurkeyFeathers, (int)Fleching.GooseFeathers);
+         int shaftTotal =(int)ShaftCalculating(userShaftChoice);
+         int total = arrowTotal+flechingTotal+shaftTotal;
+        Console.WriteLine($"Total : {total}");
     }
 
-    public void userSwitchChoice(int userinput)
+// public voide GetCost(int arrowTotal , int flechingTotal,float shaftTotal)
+// {
+
+// }
+
+    public int userSwitchChoice(int userinput, int item1, int item2, int item3)
     {
-    switch (userinput)
+        switch (userinput)
         {
             case 1:
-                { int picked = item1; }
+            return item1;
                 break;
 
-            case 2:
-                { int picked = item2; }
+                case 2:
+                return item2;
                 break;
 
-            case 3:
-                { int picked = item3; }
-                break;
+                case 3:
+                return item3;
+                break; 
+          
+          default:
+          return userinput;
+          break;
         }
     }
-    
-    // public void GetCost(int arrowUser, int flechingUser)//calculate total arrow price  | you  can combine the other method too ,,, 
-    // {
-    //     int totalPrice=0;
-    //     switch (arrowUser)
-    //     { //this doest work ... but the logic stends 
-    //         case 1:
-    //             { int yes = (int)Arrowheads.steel + totalPrice; }
-    //             break;
 
-    //         case 2:
-    //             { int yes = (int)Arrowheads.wood + totalPrice; }
-    //             break;
-
-
-    //         case 3:
-    //             { int yes = (int)Arrowheads.obsidian + totalPrice; }
-    //             break;
-
-    //         default:
-    //             Console.WriteLine("invalid input");
-    //             break;
-    //     }
-
-    //     switch (flechingUser)
-    //     {
-    //         case 1:
-    //             { int yes = (int)Fleching.plastic + totalPrice; }
-    //             break;
-
-    //         case 2:
-    //             { int yes = (int)Fleching.TurkeyFeathers + totalPrice; }
-    //             break;
-
-    //         case 3:
-    //             { int yes = (int)Fleching.GooseFeathers + totalPrice; }
-    //             break;
-
-    //         default:
-    //             Console.WriteLine("invalid input");
-    //             break;
-    //     }
-
-
-    // }
 
     public double ShaftCalculating(double userChoice)
     {
         double defaultSize = 60;
         double cosetDiff = 0.05;
 
-        if (userChoice == null) 
+        if (userChoice == null)
         {
-          double finalCost = defaultSize * cosetDiff; 
-          return finalCost;
+            double finalCost = defaultSize * cosetDiff;
+            return finalCost;
         }
         else
         {
-          double finalCost = userChoice * cosetDiff;
-          return finalCost;
+            double finalCost = userChoice * cosetDiff;
+            return finalCost;
         }
     }
 
