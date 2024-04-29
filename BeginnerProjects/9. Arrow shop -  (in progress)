@@ -3,13 +3,8 @@ using System.Runtime.Serialization;
 using System.Security.Cryptography.X509Certificates;
 
 //this will run it 
-Arrow thisShit = new Arrow();
-Console.WriteLine(thisShit);
-
-
-//Arrowheads >  steel - 10 , wood - 3 , obsidian - 5
-// shaft > 60 to 100 cm  | 0.05 per cm (if my calc is correct 60= 3 so userInput * 0.05 double check it) -- can be a tuple or an array with limits ,,, idk figure it out 
-// fleching >  plastic - 10, turkey-5 ,goose-3
+Arrow thisThing = new Arrow();
+Console.WriteLine(thisThing);
 
 
 public enum Arrowheads : int
@@ -69,16 +64,18 @@ class Arrow
 
         //Convert It to a method
         int arrowTotal = userSwitchChoice(userArrowHeadChoice, (int)Arrowheads.steel, (int)Arrowheads.wood, (int)Arrowheads.obsidian);         
-         int flechingTotal = userSwitchChoice(userFlechingChoice, (int)Fleching.plastic, (int)Fleching.TurkeyFeathers, (int)Fleching.GooseFeathers);
-         int shaftTotal =(int)ShaftCalculating(userShaftChoice);
-         int total = arrowTotal+flechingTotal+shaftTotal;
+         int flechingTotal =userSwitchChoice(userFlechingChoice, (int)Fleching.plastic, (int)Fleching.TurkeyFeathers, (int)Fleching.GooseFeathers);
+         float shaftTotal =(float)ShaftCalculating(userShaftChoice);
+        //  int total = arrowTotal+flechingTotal+shaftTotal;
+       float total = GetCost(arrowTotal,flechingTotal,shaftTotal);
         Console.WriteLine($"Total : {total}");
     }
 
-// public voide GetCost(int arrowTotal , int flechingTotal,float shaftTotal)
-// {
-
-// }
+public float GetCost(int arrow , int fleching,float shaft)
+{
+float total = (float)arrow+(float)fleching+shaft;
+      return total;
+}
 
     public int userSwitchChoice(int userinput, int item1, int item2, int item3)
     {
