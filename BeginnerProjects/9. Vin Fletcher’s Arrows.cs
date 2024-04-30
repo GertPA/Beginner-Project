@@ -2,9 +2,9 @@ using System.Reflection.Metadata.Ecma335;
 using System.Runtime.Serialization;
 using System.Security.Cryptography.X509Certificates;
 
-//this will run it 
-Arrow thisThing = new Arrow();
-Console.WriteLine(thisThing);
+
+Arrow thisShit = new Arrow();
+Console.WriteLine(thisShit);
 
 
 public enum Arrowheads : int
@@ -34,7 +34,7 @@ class Arrow
 
         Console.WriteLine("pick your arrow heads : \n1.Steel \n2.Wood \n3.Obsidian"); //can you use enums here ? - ↓ 
         int userArrowHeadChoice = Convert.ToInt16(Console.ReadLine());
-        userSwitchChoice(userArrowHeadChoice, (int)Arrowheads.steel, (int)Arrowheads.wood, (int)Arrowheads.obsidian);
+        userSwitchChoice(userArrowHeadChoice, Arrowheads.steel, Arrowheads.wood, Arrowheads.obsidian);
 
 
 
@@ -59,43 +59,23 @@ class Arrow
 
         Console.WriteLine("pick your arrow heads : \n1.Plastic \n2.Turkey Feathers \n3.Goose Feathers");
         int userFlechingChoice = Convert.ToInt16(Console.ReadLine());
-        userSwitchChoice(userFlechingChoice, (int)Fleching.plastic, (int)Fleching.TurkeyFeathers, (int)Fleching.GooseFeathers);
-
-
-        //Convert It to a method
-        int arrowTotal = userSwitchChoice(userArrowHeadChoice, (int)Arrowheads.steel, (int)Arrowheads.wood, (int)Arrowheads.obsidian);         
-         int flechingTotal =userSwitchChoice(userFlechingChoice, (int)Fleching.plastic, (int)Fleching.TurkeyFeathers, (int)Fleching.GooseFeathers);
-         float shaftTotal =(float)ShaftCalculating(userShaftChoice);
-        //  int total = arrowTotal+flechingTotal+shaftTotal;
-       float total = GetCost(arrowTotal,flechingTotal,shaftTotal);
-        Console.WriteLine($"Total : {total}");
     }
 
-public float GetCost(int arrow , int fleching,float shaft)
-{
-float total = (float)arrow+(float)fleching+shaft;
-      return total;
-}
-
-    public int userSwitchChoice(int userinput, int item1, int item2, int item3)
+    public void userSwitchChoice(int userinput, int item1, int item2, int item3)
     {
         switch (userinput)
         {
             case 1:
-            return item1;
+                { int picked = item1; }
                 break;
 
-                case 2:
-                return item2;
+            case 2:
+                { int picked = item2; }
                 break;
 
-                case 3:
-                return item3;
-                break; 
-          
-          default:
-          return userinput;
-          break;
+            case 3:
+                { int picked = item3; }
+                break;
         }
     }
 
