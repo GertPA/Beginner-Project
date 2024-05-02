@@ -3,32 +3,34 @@
 // • Display the point total to the user.
 
 
-int estatPoint = 1;
-int dutchyPoint = 3;
-int provincePoint = 6;
+using OmniSharp.Extensions.LanguageServer.Protocol.Models;
 
-// string estate = "estate";
-// string dutchy = "dutchy";
-// string province = "province";
+DomOfKings calculatingZone = new DomOfKings();
+Console.WriteLine(calculatingZone);
+class DomOfKings
+{
+    public enum Point {estates=1,dutchy=3,province=6}
+    
+public DomOfKings()
+{
 
-Console.WriteLine("How many estates do you have?");
-int userEstate = Convert.ToInt32(Console.ReadLine());
+    Console.WriteLine("How many estates do you have?");
+    int userEstate = Convert.ToInt32(Console.ReadLine());
 
-Console.WriteLine("How many duchies do you have?");
-int userDutchy = Convert.ToInt32(Console.ReadLine());
+    Console.WriteLine("How many duchies do you have?");
+    int userDutchy = Convert.ToInt32(Console.ReadLine());
 
-Console.WriteLine("How many provinces do you have?");
-int userProvincies = Convert.ToInt32(Console.ReadLine());
+    Console.WriteLine("How many provinces do you have?");
+    int userProvincies = Convert.ToInt32(Console.ReadLine());
 
-//The idea was to convey information about the point value of each territory,but i wasnt able to make it work 
-// CalculatePlaces(estatPoint,userEstate,estate); 
-// CalculatePlaces(dutchyPoint,userDutchy,dutchy);
-// CalculatePlaces(provincePoint,userProvincies,dutchy);
 
-int sum = CalculatePlaces(estatPoint,userEstate) + CalculatePlaces(dutchyPoint,userDutchy) + CalculatePlaces(provincePoint,userProvincies);
-Console.WriteLine("The sum of points of each place is: " + sum + " points");
-
-int CalculatePlaces(int placesPoints, int userPoints){
+    int sum = CalculatePlaces((int)Point.estates,userEstate) + CalculatePlaces((int)Point.dutchy, userDutchy) + CalculatePlaces((int)Point.province, userProvincies);
+    Console.WriteLine("The sum of points of each place is: " + sum + " points");
+}
+int CalculatePlaces(int placesPoints, int userPoints)
+{
     int calculatingPoint = placesPoints * userPoints;
     return calculatingPoint;
-        }
+}
+
+}
