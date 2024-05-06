@@ -13,9 +13,9 @@ public enum Fleching : int { plastic = 10, TurkeyFeathers = 5, GooseFeathers = 3
 
 class Arrow
 {
-    public int shaft;
-    bool reask = true;
-    public int userShaftChoice;
+   
+    private bool reask = true;
+    private int userShaftChoice;
 
 
     public Arrow()
