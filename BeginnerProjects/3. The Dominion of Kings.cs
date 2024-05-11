@@ -3,16 +3,28 @@
 // • Display the point total to the user.
 
 
-using OmniSharp.Extensions.LanguageServer.Protocol.Models;
-
-DomOfKings calculatingZone = new DomOfKings();
-Console.WriteLine(calculatingZone);
 class DomOfKings
 {
-    public enum Point {estates=1,dutchy=3,province=6}
-    
-public DomOfKings()
+    public int estates;
+    public int dutchy;
+    public int province;
+
+public int CalculatePlaces(int placesPoints, int userPoints)
 {
+    int calculatingPoint = placesPoints * userPoints;
+    return calculatingPoint;
+}
+
+}
+
+class Program
+{
+    static void Main()
+    {
+DomOfKings dok = new DomOfKings();
+    dok.estates=1;
+    dok.dutchy=3;
+    dok.province=6;
 
     Console.WriteLine("How many estates do you have?");
     int userEstate = Convert.ToInt32(Console.ReadLine());
@@ -24,13 +36,7 @@ public DomOfKings()
     int userProvincies = Convert.ToInt32(Console.ReadLine());
 
 
-    int sum = CalculatePlaces((int)Point.estates,userEstate) + CalculatePlaces((int)Point.dutchy, userDutchy) + CalculatePlaces((int)Point.province, userProvincies);
+    int sum = dok.CalculatePlaces(dok.estates,userEstate) + dok.CalculatePlaces(dok.dutchy, userDutchy) + dok.CalculatePlaces(dok.province, userProvincies);
     Console.WriteLine("The sum of points of each place is: " + sum + " points");
-}
-int CalculatePlaces(int placesPoints, int userPoints)
-{
-    int calculatingPoint = placesPoints * userPoints;
-    return calculatingPoint;
-}
-
+    }
 }
