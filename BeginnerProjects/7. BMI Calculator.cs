@@ -1,41 +1,8 @@
-BmiCalculator test = new BmiCalculator();
-Console.WriteLine(test);
+
 class BmiCalculator
 {
-    int userInput = int.Parse(Console.ReadLine());
 
-    public BmiCalculator()
-    {
-        Console.WriteLine("Select Units you want to use :");
-        Console.WriteLine("1-Imperial Units (inches , pounds) \n2-Metric Units (cm , kg)");
-        int userInput = int.Parse(Console.ReadLine());
-
-        Console.WriteLine("What is your height?");
-        double userHeight = Double.Parse(Console.ReadLine());
-
-        Console.WriteLine("How much do you weight?");
-        double userWeight = Double.Parse(Console.ReadLine());
-        //Units to use 
-        switch (userInput)
-        {
-            case 1:
-                float bmiConvert = BmiCalculate(userHeight, userWeight) * 703;
-                Classification(bmiConvert);
-                break;
-
-            case 2:
-                double metersHeight = userHeight / 100;
-                Classification(BmiCalculate(metersHeight, userWeight));
-                break;
-
-            default:
-                Console.WriteLine("Invalid Input. Please type a number."); // Fixed the error message
-                break;
-        }
-    }
-
-
-    //Calculate your BMI
+     //Calculate your BMI
     public float BmiCalculate(double height, double weight)
     {
         double FinalUserHeight = Math.Pow(height, 2);
@@ -60,3 +27,39 @@ class BmiCalculator
     }
 }
 
+class Program 
+{
+   
+        
+    static void Main()
+    {
+    BmiCalculator BMiClasse = new BmiCalculator();
+        Console.WriteLine("Select Units you want to use :");
+        Console.WriteLine("1-Imperial Units (inches , pounds) \n2-Metric Units (cm , kg)");
+        int userInput = int.Parse(Console.ReadLine());
+
+        Console.WriteLine("What is your height?");
+        double userHeight = Double.Parse(Console.ReadLine());
+
+        Console.WriteLine("How much do you weight?");
+        double userWeight = Double.Parse(Console.ReadLine());
+        
+               
+        switch (userInput)
+        {
+            case 1:
+                float bmiConvert = BMiClasse.BmiCalculate(userHeight, userWeight) * 703;
+                BMiClasse.Classification(bmiConvert);
+                break;
+
+            case 2:
+                double metersHeight = userHeight / 100;
+                BMiClasse.Classification(BMiClasse.BmiCalculate(metersHeight, userWeight));
+                break;
+
+            default:
+                Console.WriteLine("Invalid Input. Please type a number."); // Fixed the error message
+                break;
+        }
+    }
+}
