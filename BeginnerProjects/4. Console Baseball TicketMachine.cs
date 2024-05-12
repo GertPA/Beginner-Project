@@ -1,14 +1,12 @@
-using System;
-
-BaseballTicketMachine test = new BaseballTicketMachine();
-Console.Write(test);
 class BaseballTicketMachine
 {
     public (int adult, int children, int other) ticketPriceList = (20, 10, 15);
 
 
-    public BaseballTicketMachine()
+    static void Main()
     {
+        BaseballTicketMachine program = new BaseballTicketMachine();
+
         Console.WriteLine("Welcome to the baseball Match Ticket Machine!");
         Console.WriteLine("Baseball Match Detail:");
 
@@ -16,13 +14,13 @@ class BaseballTicketMachine
         DateTime timeToday = DateTime.Now;
         Console.WriteLine("Date:" + dateToday.ToString(" MMMM dd, yyyy"));
         Console.WriteLine("Time:" + timeToday.ToString(" h:mm tt"));
-        TestingThis();
+        program.TestingThis();
         Console.WriteLine("\tDo you want to buy more tickets?(y/n):");
         string userInput = Console.ReadLine();
 
         if (userInput.ToLower() == "y")
         {
-             TestingThis();
+             program.TestingThis();
 
             Console.WriteLine("Process exited after 10 seconds \n Press any key to continue");
             Thread.Sleep(1000);
@@ -37,7 +35,7 @@ class BaseballTicketMachine
         }
     }
 
-    public void TestingThis()
+    void TestingThis()
     {
         int numberofSeats = 100;
         Console.WriteLine("Total seats Available:" + numberofSeats);
@@ -64,5 +62,4 @@ class BaseballTicketMachine
     }
 
 }
-
    
