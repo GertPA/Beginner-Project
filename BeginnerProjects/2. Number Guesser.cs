@@ -6,7 +6,7 @@ class GuessTheNumber
   private int numberOfLives { get; set; }
   private int numberOfGuesses { get; set; }
   private int higherNumber { get; set; }
-  private int lowerNumber { get; set; }
+  private int lowerNumber { get; set; } //maybe there is no need to initialize , jsut replace it with 0 ??
   public GuessTheNumber(int _numberOfLives, int _numberOfGuesses, int _higherNumber, int _lowerNumber)
   {
     randomNr = randomNumber.Next(1, 101);
