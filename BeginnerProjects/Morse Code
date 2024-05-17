@@ -1,13 +1,16 @@
-//there must be a better way to do this
 string[] morseCode = [".-", "-...", "-.-.", "-..", ".", "..-.", "--.", "....", "..", ".---", "-.-", ".-..", "--", "-.", "---", ".--.", "--.-", ".-.", "...", "-", "..-", "...-", ".--", "-..-", "-.--", "--.."];
 char[] alphabet =['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z']; 
-
+string[] alphabetString =["A", "B", "C"];
 //WILL GET THE USER INPUT AND TRANSFER IT TO CHAR        
 Console.WriteLine("what do you want to say?");
-        string userInput = Console.ReadLine();
-        char[] userCharInput = userInput.ToCharArray();
+        string? userInput = Console.ReadLine();
+        char userCharInput = Convert.ToChar(userInput);
 
-//find a wayto match each array element to the other array element
-
-   
-      
+for (int i = 0; i < alphabetString.Length; i++)
+{
+ if(alphabetString[i]==userInput)
+ {
+  Console.WriteLine(morseCode[i]);
+ }
+  }
+//try Binary Search Algorithm 
