@@ -1,4 +1,4 @@
-//OMG THIS TOOK SO MUCH TIME TO DO AND FIGURE IT OUT , ITS SO FUCKING SIMPLE YET I COULNT FIGURE IT OUT WITHOUT HELP , I AINT CUT OUT FOR THIS 
+//THIS TOOK SO MUCH GOD DAMN  TIME TO FIGURE IT OUT , ITS SO FUCKING SIMPLE YET I COULNT FIGURE IT OUT WITHOUT HELP , I AINT CUT OUT FOR THIS 
 
 string[] morseCode = [".-", "-...", "-.-.", "-..", ".", "..-.", "--.", "....", "..", ".---", "-.-", ".-..", "--", "-.", "---", ".--.", "--.-", ".-.", "...", "-", "..-", "...-", ".--", "-..-", "-.--", "--.."];
 char[] alphabet =['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z']; 
