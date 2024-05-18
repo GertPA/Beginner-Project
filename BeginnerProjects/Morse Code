@@ -1,20 +1,21 @@
+//OMG THIS TOOK SO MUCH TIME TO DO AND FIGURE IT OUT , ITS SO FUCKING SIMPLE YET I COULNT FIGURE IT OUT WITHOUT HELP , I AINT CUT OUT FOR THIS 
+
 string[] morseCode = [".-", "-...", "-.-.", "-..", ".", "..-.", "--.", "....", "..", ".---", "-.-", ".-..", "--", "-.", "---", ".--.", "--.-", ".-.", "...", "-", "..-", "...-", ".--", "-..-", "-.--", "--.."];
-string[] alphabetString = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"];
+char[] alphabet =['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z']; 
 
-// char[] alphabet =['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z']; 
-
-
-//WILL GET THE USER INPUT AND TRANSFER IT TO CHAR        
+ 
 Console.WriteLine("what do you want to say?");
 string? userInput = Console.ReadLine();
-char userCharInput = Convert.ToChar(userInput);
 
 
-//try Binary Search Algorithm 
-for (int i = 0; i < alphabetString.Length; i++)
+foreach (char item in userInput.ToUpper())
 {
-  if (alphabetString[i] == userInput)
+  for (int i = 0; i < alphabet.Length; i++)
+{
+  if (alphabet[i] == item)
   {
-    Console.WriteLine(morseCode[i]);
+    Console.Write(" "+morseCode[i]);
+    
   }
+}
 }
