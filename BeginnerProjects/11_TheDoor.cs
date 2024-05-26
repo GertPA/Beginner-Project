@@ -2,8 +2,10 @@ class Program //runs the class door , can be replaced with static void {etc i do
 {
     public static void Main()
     {
-        //why not instead of inputid password here, make it to ask the user to put a password
-        Door door1 = new Door(322);
+    
+        Console.WriteLine("What passcode do you want set for the door ?");
+       int firstPassCode =Convert.ToInt32(Console.ReadLine());
+        Door door1 = new Door(firstPassCode);
 
         
     }
