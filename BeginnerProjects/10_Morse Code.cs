@@ -1,4 +1,3 @@
-//THIS TOOK SO MUCH GOD DAMN  TIME TO FIGURE IT OUT , ITS SO FUCKING SIMPLE YET I COULNT FIGURE IT OUT WITHOUT HELP , I AINT CUT OUT FOR THIS 
 
 class MorseConverter //Main class Maybe we can seperate it ?
 {
@@ -47,3 +46,4 @@ class MorseConverter //Main class Maybe we can seperate it ?
 
   }
 }
+
