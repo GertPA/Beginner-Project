@@ -13,3 +13,4 @@ The projects I've got in here so far include :
 9. Vin Fletcher’s Arrows
 10. Morse Code Convertor
 11. The Door
+12. Password Validator
