@@ -1,12 +1,12 @@
+
 class Program
 {
     public static void Main()
     {
-        bool testBool=false;
-        while(testBool)
+       
         Console.Write("Type your password : ");
         string userPassword = Console.ReadLine()!;
-        PassWordValidator passVal = new PassWordValidator(userPassword,false);
+        PassWordValidator passVal = new PassWordValidator(userPassword);
        
     }
 }
@@ -16,10 +16,10 @@ class PassWordValidator
     public string _testWord;
     public bool _Final;
 
-    public PassWordValidator(string testWord,bool finalStat)
+    public PassWordValidator(string testWord)
     {
         _testWord = testWord;
-        _Final = finalStat;
+        
 
 
           //Dont Look at the statments plss
@@ -30,7 +30,7 @@ class PassWordValidator
             if (CheckUpper(testWord) == true && CheckNumber(testWord) == true && CheckForRules(testWord) == false)
             {
                 Console.WriteLine("This Password contains UpperCase latters and numbers,its within the acceptable range");
-              finalStat = true;
+              
             }
             else if (CheckUpper(testWord) == false && CheckNumber(testWord) == true && CheckForRules(testWord) == true)
             {
