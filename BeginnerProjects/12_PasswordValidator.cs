@@ -1,39 +1,55 @@
-
 class Program
 {
     public static void Main()
     {
-
+        bool testBool=false;
+        while(testBool)
         Console.Write("Type your password : ");
         string userPassword = Console.ReadLine()!;
-
-        PassWordValidator passVal = new PassWordValidator(userPassword);
-
+        PassWordValidator passVal = new PassWordValidator(userPassword,false);
+       
     }
 }
 
 class PassWordValidator
 {
     public string _testWord;
+    public bool _Final;
 
-    public PassWordValidator(string testWord)
+    public PassWordValidator(string testWord,bool finalStat)
     {
         _testWord = testWord;
+        _Final = finalStat;
 
 
-
+          //Dont Look at the statments plss
         if (testWord.Length >= 6 && testWord.Length <= 13)
         {
             Console.WriteLine($"The password has in total {testWord.Length} characters , within the acceptable range");
-            if (CheckUpper(testWord) == true && CheckNumber(testWord) == true && CheckForRules(testWord) == true)
-            {
-                Console.WriteLine("This Password contains UpperCase latters and numbers");
 
+            if (CheckUpper(testWord) == true && CheckNumber(testWord) == true && CheckForRules(testWord) == false)
+            {
+                Console.WriteLine("This Password contains UpperCase latters and numbers,its within the acceptable range");
+              finalStat = true;
+            }
+            else if (CheckUpper(testWord) == false && CheckNumber(testWord) == true && CheckForRules(testWord) == true)
+            {
+                Console.WriteLine("This Password doesnt conntain a UpperCase latters. ");
+
+            }
+            else if (CheckUpper(testWord) == true && CheckNumber(testWord) == false && CheckForRules(testWord) == true)
+            {
+                Console.WriteLine("This Password doesnt contain numbers.");
+
+            }
+            else if (CheckUpper(testWord) == true && CheckNumber(testWord) == true && CheckForRules(testWord) == true)
+            {
+                Console.WriteLine("Your password shoulnt contain a capital T , nor should it have a '&' as a character");
 
             }
             else
             {
-                Console.WriteLine("This Password doesnt contains UpperCase latters or numbers");
+                Console.WriteLine("Waaat???");
             }
         }
         else
@@ -43,58 +59,39 @@ class PassWordValidator
         }
 
 
-
-
-
+//THERE must BE another WAYY RIGHT
         bool CheckNumber(string testWorld) //will Check If it contains a number
         {
             foreach (char item in testWorld)
             {
-                for (int i = testWorld.Length - 1; i < testWorld.Length;)
-                {
-                    if (char.IsDigit(item) == true)
-                    {
-                        return true;
-                    }
-                    else
-                    {
-                        return false;
-                    }
-                }
+                if (char.IsDigit(item) == true) return true;
 
             }
             return false;
         }
+
         bool CheckUpper(string testWorld) //will check if it contains a uppercase letter
         {
             foreach (char item in testWorld)
             {
-                for (int i = testWorld.Length - 1; i < testWorld.Length;)
-                {
-                    if (char.IsUpper(item) == true)
-                    {
-                        return true;
-                    }
-                    else
-                    {
-                        return false;
-                    }
-                }
-
+                if (char.IsUpper(item) == true) return true;
             }
             return false;
         }
-        bool CheckForRules(string testWorld) // needs testing
+
+    }
+
+    bool CheckForRules(string testWorld) // needs testing
+    {
+        foreach (char item in testWorld)
         {
-            for (int i = 0; i < testWorld.Length; i++)
-            {
-                if (testWorld[i] == 'T' && testWorld[i] == '&') return false;
-                else return true;
-            }
-            return true;
+            if (item == 'T' || item == '&') return true;
         }
 
 
+        return false;
     }
+
 }
+
 
