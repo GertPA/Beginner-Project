@@ -7,14 +7,13 @@ class Program
         Console.Write("Type your password : ");
         string userPassword = Console.ReadLine()!;
         PassWordValidator passVal = new PassWordValidator(userPassword);
-       
-    }
+           }
 }
 
 class PassWordValidator
 {
     public string _testWord;
-    public bool _Final;
+
 
     public PassWordValidator(string testWord)
     {
