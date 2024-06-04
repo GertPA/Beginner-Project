@@ -15,6 +15,15 @@ while (true)
                 if (i < listOfWord[randomSelection].Length && userInput[i] == listOfWord[randomSelection][i])
                 {
                         Console.Write($"{ listOfWord[randomSelection][i]}");
+                        
+                        if(userInput == listOfWord[randomSelection])
+                        {
+                                Console.WriteLine("found it");
+                                found = false; 
+                                break;
+                        }
+
+        
                 }
                 else
                 {
@@ -22,3 +31,4 @@ while (true)
                 }
         }      
 }
+
