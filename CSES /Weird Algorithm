@@ -1,0 +1,19 @@
+int n = 4;
+
+    while (n != 1)
+    {
+        if (n % 2 != 0)//odd
+        {
+            n = n * 3 + 1;
+            Console.Write(n + " ");
+            n = n / 2;
+            Console.Write(n+ " ");
+        }
+        if (n % 2 == 0) //even
+        {
+        n = n/2;
+          Console.Write(n+ " ");
+        }
+    }
+
+
