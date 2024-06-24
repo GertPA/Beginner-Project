@@ -14,3 +14,5 @@ The projects I've got in here so far include :
 10. Morse Code Convertor
 11. The Door
 12. Password Validator
+13. Rock Paper Scissors
+14. HangMan
